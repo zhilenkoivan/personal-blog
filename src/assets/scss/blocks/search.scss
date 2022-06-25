@@ -1,0 +1,25 @@
+.search-text{
+    display: block;
+    padding: 14px 20px;
+    height: 40px;
+    width: 210px;
+    background-color: $primary;
+    border: none;
+
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 12px;
+    color: $white;
+
+    &::placeholder{
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 12px;
+        line-height: 14px;
+    }
+    @include breakpoint($mobile-bp){
+        &::placeholder{
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+}

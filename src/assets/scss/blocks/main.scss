@@ -1,0 +1,12 @@
+.main{
+    padding-top: 100px;
+    padding-left: $sidebar-width;
+    @include breakpoint($tablet-bp) {
+        padding-left: 0;
+        padding-top: 80px;
+    }
+    @include breakpoint($mobile-bp) {
+        padding-left: 0;
+        padding-top: 60px;
+    }
+}

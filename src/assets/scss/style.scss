@@ -1,0 +1,53 @@
+@import "vars";
+@import "mixins";
+@import "vendor/reset";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #181818;
+    font-family:  Roboto, sans-serif,;
+    font-size: 1.4rem;
+    color: $white;
+    &.no-scroll{
+         overflow: hidden;
+    }
+    @include breakpoint($tablet-bp){
+        &.show-sidebar{
+            overflow: hidden;
+        }
+    }
+}
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+
+/* blocks*/
+@import "blocks/page";
+@import "blocks/modal";
+@import "blocks/line";
+@import "blocks/header";
+@import "blocks/burger";
+@import "blocks/nav";
+@import "blocks/auth";
+@import "blocks/subnav";
+@import "blocks/search";
+@import "blocks/sidebar";
+@import "blocks/main";
+@import "blocks/title";
+@import "blocks/container";
+@import "blocks/profile";
+@import "blocks/stories";
+@import "blocks/add-post";
+@import "blocks/post";
+@import "blocks/comments";
+@import "blocks/embed";
+@import "blocks/pagination";
+@import "blocks/mywork";
+@import "blocks/btn";
+@import "blocks/form";

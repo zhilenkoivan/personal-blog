@@ -1,0 +1,216 @@
+.sidebar{
+    width: $sidebar-width;
+    height: 100vh;
+
+    background-color:$primary;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: $z-index-sidebar;
+    transition: transform .5s linear;
+    @include breakpoint($tablet-bp) {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 40px);
+        padding-bottom: 15px;
+        overflow: auto;
+        
+        background-color:#0D0D0D;
+        top: 40px;
+        
+        transform: translateX(-100%);
+        transition: transform .2s linear;
+        
+        .show-sidebar & {
+            transform: translateX(0);
+        }
+    }
+}
+.sidebar__header{
+    height: 180px;
+    background-color:$secondary;
+    margin-bottom: 70px;
+    @include breakpoint($tablet-bp) {
+        height: 100px;
+        margin-bottom: 0;
+    }
+}
+.sidebar__header-pic{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.profile{
+      position: relative;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      margin: 0 20px;
+      margin-bottom: 30px;
+      @include breakpoint($tablet-bp){
+        padding-bottom: 20px;
+        border-bottom: 1px solid #1C1C1C;
+      }
+}
+.profile__avatar{
+    width: 140px;  
+    position: absolute;
+    bottom: 100%;
+    left: 25%;
+    @include breakpoint($tablet-bp) {
+        width: 100px;
+        left: -7%;
+        bottom: 0;
+    }
+}
+.profile__name{
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 3px;
+
+    @include breakpoint($tablet-bp) {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+}
+.profile__prof{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 17px;
+    color: #DEDEDE;
+
+    @include breakpoint($tablet-bp){
+        margin-left: 40px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+.profile__social{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+    @include breakpoint($tablet-bp){
+        display: none;
+    }
+}
+.profile__text{
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    @include breakpoint($tablet-bp){
+        display: none;
+    }
+}
+
+.sidebar__content{
+    padding: 0 20px;
+    @include breakpoint($tablet-bp){
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        height: calc(100vh - 40px);
+    }
+}    
+.mobile__nav{
+    display: none;
+    padding: 0 20px;
+    margin-bottom: 55px;
+    flex-flow: column;
+    width: 100%;
+
+
+    @include breakpoint($tablet-bp){
+        display: flex;
+        text-align: left;
+    }
+    .mobile__nav-item{
+        position: relative;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+        margin-bottom: 12px;
+        transition: color .2s linear ;
+        .mobile__nav-link{
+            display: block;
+            text-decoration: none;
+            color: $white;
+            &:hover{
+                color: #107EFF;
+            }
+            
+        }
+        .mobile__nav-subnav{
+            display: block;
+            margin-left: 15px;
+        }
+        .subnav-link{
+            display: block;
+            text-decoration: none;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 32px;
+            color: #FFFFFF;
+            &:hover{
+                color: #107EFF;
+            }
+        }
+        .subnav-link:not(:last-child){
+            margin-bottom: 10px;
+        }
+}
+}
+.sidebar__buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;   
+}
+
+.sidebar__button{
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    &--red{
+        background: $red;
+        box-shadow: 0px 7px 17px -10px rgba(242, 63, 63, 0.35);
+        padding: 13px 25px;
+        transition: all .2s linear ;
+        &:hover{
+            box-shadow: 0 0 10px 0 $red inset, 0 0 5px 1px $red;
+        }
+        &:active{
+            background: #97251d;
+        }
+    }
+    &--blue{
+        background: $blue;
+        box-shadow: 0px 7px 17px -10px rgba(32, 84, 219, 0.35);
+        padding: 13px 20px;
+        transition: all .2s linear ;
+        &:hover{
+            box-shadow: 0 0 10px 0 $blue inset, 0 0 5px 1px $blue;
+        }
+        &:active{
+            background: #222583
+        }
+    }
+}

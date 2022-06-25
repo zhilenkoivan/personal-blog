@@ -1,0 +1,75 @@
+.stories{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 13px;
+    grid-template-rows: 195px;
+    margin-bottom: 3rem;
+    @include breakpoint($tablet-bp){
+        overflow: auto;
+    }
+    
+}
+
+.stories__item{
+    width: 140px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+        &:after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgba($black, .9),
+            rgba($black, 0) 50%,
+            rgba($black, .9));
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 0;
+        }
+        &:hover{
+            .stories__pic{
+                transform: scale(1.15);
+                transition-duration: .4s;
+            }
+        }
+}
+.stories__pic{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transform: scale(1.05);
+    transition: transform .2s ease-in-out;
+}
+.stories__title{
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 14px;
+    z-index: 3;
+}
+.stories__data{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 13px;
+    padding-right: 15px;
+    z-index: 3;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+    text-transform: uppercase;
+}

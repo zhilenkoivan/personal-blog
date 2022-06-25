@@ -1,0 +1,21 @@
+.page{
+    overflow: hidden;
+    .show-sidebar & {
+    @include breakpoint($tablet-bp){
+        position: relative;
+
+   }
+}
+}
+.page-mask{
+    @include breakpoint($tablet-bp){
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(#000, .8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+}
